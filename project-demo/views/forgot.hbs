@@ -1,0 +1,46 @@
+    <!DOCTYPE html>
+    <head>
+
+    </head>
+       <style>
+           .a{
+               width: 350px;
+               height: 200px;
+               margin-left: 400px;
+               margin-top: 50px;
+               background-color: blueviolet;
+               text-align: center;
+           }
+           input[type="text"]{
+               width: 75%;
+               height: 20px;
+               margin-top: 10px;
+               padding-left: 15px;
+               font-size: 20px;
+               border: grey;
+               background-color: hsla(hue, saturation, lightness, alpha);
+           }
+           label{
+               font-size: 25px;
+           }
+           h1{
+               margin-left: 425px;
+               color: green;
+           }
+           #btn{
+               font-size: 20px;
+               margin-top: 10px;
+               background-color: green;
+           }
+       </style>
+    <body>
+        <h1>Forgot Password??</h1>
+        <div class="a">
+             <form action="/forgot" method="POST">
+                 <label>username</label>
+                 <input type="text" id="name" name="name" autocomplete="off">
+                 <br></br>
+                 <button type="submit" id="btn">Submit</button>
+             </form>
+        </div>
+    </body>

@@ -1,0 +1,38 @@
+.d {
+  background-color: blueviolet;
+  text-align: center;
+  margin-left: 400px;
+  margin-top: 50px;
+  width: 350px;
+  height: 320px;
+  padding: 10px;
+}
+h1 {
+  margin-left: 400px;
+  color: darkgreen;
+}
+
+#btn {
+  background-color: darkgreen;
+  font-size: 25px;
+  margin: 8px;
+  border: darkslategray;
+}
+#checkbox {
+  margin-right: 200px;
+}
+
+label {
+  font-size: 20px;
+}
+input[type="text"],
+input[type="password"] {
+  width: 85%;
+  height: 6px;
+  padding: 10px 15px;
+  margin: 5px 0;
+  display: inline-block;
+  background-color: cyan;
+  font-size: 20px;
+  border: black;
+}

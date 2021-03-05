@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../public/reset.css">
+    <script src="../public/resetvalidation.js"></script>
+    <script src="../public/toggle.js"></script>
+    <style>
+        .d {
+            background-color: blueviolet;
+            text-align: center;
+            margin-left: 400px;
+            margin-top: 50px;
+            width: 350px;
+            height: 240px;
+            padding: 10px;
+        }
+
+        h1 {
+            margin-left: 460px;
+            color: darkgreen;
+        }
+
+        #btn {
+            background-color: darkgreen;
+            font-size: 25px;
+            margin: 8px;
+            border: darkslategray;
+        }
+
+        #checkbox {
+            margin-right: 200px;
+            margin-top: 10px;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 85%;
+            height: 7px;
+            padding: 13px 14px;
+            margin: 5px 0;
+            display: inline-block;
+            background-color: cyan;
+            font-size: 20px;
+            border: black;
+        }
+    </style>
+
+    <script>
+        function validate() {
+
+            let password = document.getElementById("password").value;
+            let cpassword = document.getElementById("cpassword").value;
+
+
+            let sletter = /[a-z]/;
+            let cletter = /[A-Z]/;
+            let number = /[0-9]/;
+            let symb = /[!,@,#,$,%,&,*]/;
+
+            if (password.length < 8) {
+                alert('password must contain atleast 8 character');
+                return false;
+            }
+            else if (!sletter.test(password)) {
+                alert("Password must contain atleast one lowercase");
+                return false;
+            }
+            else if (!cletter.test(password)) {
+                alert("Password must contain atleast one uppercase");
+                return false;
+            }
+            else if (!number.test(password)) {
+                alert("Password must contain atleast one numeric value");
+                return false;
+            }
+            else if (!symb.test(password)) {
+                alert("Password must contain atleast one special character");
+                return false;
+            }
+            else if (password !== cpassword) {
+                alert("Password does not match");
+                return false;
+            }
+            else
+                return true;
+
+        }
+
+        function toggle() {
+            let x = document.getElementById("cpassword");
+
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Reset Password</h1>
+    <div class="d">
+        <form action="/reset" method="POST" onsubmit="return validate()">
+            <label>New Password</label>
+            <input type="password" id="password" name="password" autocomplete="off">
+            <label> Confirm Password</label>
+            <input type="password" id="cpassword" name="cpassword" autocomplete="off">
+            Show password <input type="checkbox" id="checkbox" onclick="toggle()">
+            <br></br>
+            <button type="submit" id="btn">Reset Password</button>
+            <input type="hidden" class="hide" name="resetLink" id="resetLink" value="{{resetLink}}">
+        </form>
+    </div>
+</body>
+
+</html>

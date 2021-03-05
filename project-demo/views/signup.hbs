@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>This is a Signup page</title>
+            <link rel="stylesheet" type="text/css" href="../public/signup.css">
+            <script src="../public/validation.js"></script>
+            <script src="../public/toggle.js"></script>
+        </head>
+
+        <body>
+            <h1>Please fill the credential!!!</h1>
+            <div class="d">
+                <form action="/signup" method="POST" onsubmit="return validate()">
+                    <label>name</label>
+                    <input type="text"id="name" name="name" autocomplete="off" required>
+                    <label>age</label>
+                    <input type="text"id="age"name="age" autocomplete="off" required>
+                    <label>email</label>
+                    <input type="text"id="email"name="email" autocomplete="off">
+                    <label>password</label>
+                    <input type="password"id="password"name="password" autocomplete="off">
+                    Show password <input type="checkbox" id="checkbox" onclick="toggle()">
+                    <br></br>
+                    <button type="submit" id="btn">Signup</button>
+                </form>
+            </div>
+        </body>
+     
+    </html>
